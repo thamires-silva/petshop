@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSeed(seedColor: const Color(0xFF5BB15A)),
             useMaterial3: true,
             fontFamily: 'fredoka'),
-        home: pets());
+        home: agendamento());
   }
 }
 

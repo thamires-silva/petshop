@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:petshop/telas/butaohorario.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 void main() {
   runApp(agendamento());
@@ -12,10 +14,27 @@ class agendamento extends StatelessWidget {
         appBar: AppBar(
           title: Text('Agendamento'),
         ),
-        body: Center(
+        body: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+               Row(
+                  children: [
+                    Icon(Icons.calendar_today),
+                    Text(
+                      'Consultas Agendadas',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TableCalendar(
+                      focusedDay: DateTime.now(),
+                      firstDay: DateTime.utc(2023, 1, 1),
+                      lastDay: DateTime.utc(2040, 12, 31),
+                    ),
+                  ],
+                ),
               Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -40,26 +59,66 @@ class agendamento extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Icon(Icons.access_time),
                   Text('Escolha um horário'),
-                  Icon(Icons.access_time),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          // Container(
+                          //   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                          //   decoration: BoxDecoration(
+                          //       border:
+                          //           Border.all(width: 2, color: Colors.green),
+                          //       borderRadius: BorderRadius.circular(5)),
+                          //   child: Text(
+                          //     '9h',
+                          //   ),
+                          // ),
+                          // SizedBox(height: 8,),
+                          //  Container(
+                          //   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                          //   decoration: BoxDecoration(
+                          //       border:
+                          //           Border.all(width: 2, color: Colors.green),
+                          //       borderRadius: BorderRadius.circular(5)),
+                          //   child: Text(
+                          //     '9h',
+                          //   ),
+                          // ),
+                          // SizedBox(height: 8,),
+                          //  Container(
+                          //   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                          //   decoration: BoxDecoration(
+                          //       border:
+                          //           Border.all(width: 2, color: Colors.green),
+                          //       borderRadius: BorderRadius.circular(5)),
+                          //   child: Text(
+                          //     '9h',
+                          //   ),
+                          // ),
+                          Butaohorario(clicar: (){}, texto: '9h'),
+                          Butaohorario(clicar: (){}, texto: '9h'),
+                           Butaohorario(clicar: (){}, texto: '9h'),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                           Butaohorario(clicar: (){}, texto: '9h'),
+                          Butaohorario(clicar: (){}, texto: '9h'),
+                           Butaohorario(clicar: (){}, texto: '9h'),
+                           
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.check_box_outline_blank),
-                  Icon(Icons.check_box_outline_blank),
-                  Icon(Icons.check_box_outline_blank),
-                  Icon(Icons.check_box_outline_blank),
-                  Icon(Icons.check_box_outline_blank),
-                  Icon(Icons.check_box_outline_blank),
-                ],
-              ),
+             
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
@@ -73,21 +132,31 @@ class agendamento extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text('Reservar Horário', style: TextStyle(fontSize: 18)),
+                  child:
+                      Text('Reservar Horário', style: TextStyle(fontSize: 18)),
                 ),
               ),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.home),
-                  Icon(Icons.pets),
-                  Icon(Icons.calendar_today),
-                  Icon(Icons.person),
-                ],
-              ),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.green,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+                label: 'Home',
+                backgroundColor: Colors.green),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.pets, color: Colors.black), label: 'Pets'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.add, color: Colors.black), label: 'Add'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person, color: Colors.black), label: 'Person'),
+          ],
         ),
       ),
     );

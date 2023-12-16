@@ -96,7 +96,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
             const SizedBox(height: 20.0),
             Butoes(clicar: (){}, texto: 'Cadastrar'),
             Text('Ou entre com o'),
-            Googlebutao(texto: 'entre com o google', clicar:(){}, icon: 'google',),
+            Googlebutao(texto: 'entre com o google', clicar:(){}, icon: 'google',cor: Colors.white,),
             // FilledButton(onPressed: () {}, child: const Text('Cadastrar')),
             
           ],
