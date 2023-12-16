@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:petshop/telas/botaogoogle.dart';
+import 'package:petshop/telas/buttoes.dart';
 
 class TelaCadastro extends StatefulWidget {
   const TelaCadastro({super.key});
@@ -16,11 +18,17 @@ class _TelaCadastroState extends State<TelaCadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
+        decoration: BoxDecoration( image: DecorationImage(image: AssetImage('imagens/mulherdeitada.png'),fit: BoxFit.cover)),
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset(
+          'imagens/coco.png',
+          fit: BoxFit.fitWidth,
+          width: 150,
+        ),
             TextField(
               controller: _NomeController,
               style: const TextStyle(
@@ -80,12 +88,21 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 ),
               ),
             ),
+            InkWell(onTap: () {
+              
+            },child: Text('esqueceu a senha'),),
+
+            
             const SizedBox(height: 20.0),
-            FilledButton(onPressed: () {}, child: const Text('Cadastrar')),
+            Butoes(clicar: (){}, texto: 'Cadastrar'),
+            Text('Ou entre com o'),
+            Googlebutao(texto: 'entre com o google', clicar:(){}, icon: 'google',),
+            // FilledButton(onPressed: () {}, child: const Text('Cadastrar')),
             
           ],
         ),
       ),
+      bottomNavigationBar:  Container(padding: EdgeInsets.symmetric(vertical: 10),   color: Colors.green, child: Text('Reservado',textAlign: TextAlign.center,),),
     );
   }
 }

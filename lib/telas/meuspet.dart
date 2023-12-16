@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petshop/telas/icons.dart';
 
 void main() {
   runApp(pets());
@@ -8,26 +9,22 @@ class pets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      ),
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-
-            
             Container(
               height: 200,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
                 color: Colors.white,
               ),
-              child: Image.asset('imagens/cachorro1.png',fit: BoxFit.cover
-              ),
+              child: Image.asset('imagens/cachorro1.png', fit: BoxFit.cover),
             ),
             SizedBox(height: 10),
-            
+
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
@@ -35,6 +32,7 @@ class pets extends StatelessWidget {
               ),
               padding: EdgeInsets.all(16.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,10 +51,17 @@ class pets extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  Icon(Icons.accessibility), 
+                  Iconssvg(imagem:'venus', cor: Colors.black,),
                 ],
               ),
             ),
+            Row(children: [
+              Icon(Icons.accessibility),
+              Text(
+                'Border Collie',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ]),
             SizedBox(height: 10),
             // Informações sobre o cachorro
             Container(
@@ -111,11 +116,14 @@ class pets extends StatelessWidget {
 
   Widget _buildInfoCard(String label, String value) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+          color: Colors.blue, borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
           Text(
             label,
-            style: TextStyle(color: Colors.grey),
+            style: TextStyle(color: Colors.black),
           ),
           SizedBox(height: 5),
           Text(

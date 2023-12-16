@@ -1,10 +1,12 @@
 import "package:flutter/material.dart";
+import 'package:get/get.dart';
 import "package:petshop/meuperfil.dart";
 import "package:petshop/telas/agendamento.dart";
 import "package:petshop/telas/cadastro.dart";
 import "package:petshop/telas/carregando.dart";
 import "package:petshop/telas/login.dart";
 import "package:petshop/telas/meuspet.dart";
+import "package:petshop/telas/pixelposse.dart";
 
 void main() {
   runApp(MyApp());
@@ -15,13 +17,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         theme: ThemeData(
             colorScheme:
                 ColorScheme.fromSeed(seedColor: const Color(0xFF5BB15A)),
             useMaterial3: true,
             fontFamily: 'fredoka'),
-        home: Carregando());
+        home: pets());
   }
 }
 
