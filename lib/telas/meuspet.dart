@@ -9,14 +9,13 @@ class pets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              height: 200,
+              width: 512,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
                 color: Colors.white,
@@ -24,7 +23,6 @@ class pets extends StatelessWidget {
               child: Image.asset('imagens/cachorro1.png', fit: BoxFit.cover),
             ),
             SizedBox(height: 10),
-
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
@@ -51,19 +49,27 @@ class pets extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-                  Iconssvg(imagem:'venus', cor: Colors.black,),
+                  Iconssvg(
+                    imagem: 'venus',
+                    cor: Colors.black,
+                  ),
                 ],
               ),
             ),
             Row(children: [
-              Icon(Icons.accessibility),
+              Iconssvg(
+                imagem: 'paw',
+                cor: Colors.black,
+                altura: 20,
+              ),
+              SizedBox(width: 10),
               Text(
-                'Border Collie',
-                style: TextStyle(color: Colors.grey),
+                'Sobre',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w900),
               ),
             ]),
             SizedBox(height: 10),
-            // Informações sobre o cachorro
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
@@ -81,28 +87,40 @@ class pets extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            // Vacinas
             Container(
               decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.grey),
                 borderRadius: BorderRadius.circular(10.0),
                 color: Colors.white,
               ),
               padding: EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  Text(
-                    "Vacinas",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Vacinas",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "Ver todos",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      _buildVaccineCard("Anti-Rábica"),
-                      _buildVaccineCard("Raiva"),
+                      _buildVaccineCard("Anti-Rábica", '24 jan 2022', 'dr.Pedro'),
+                      _buildVaccineCard("Raiva",'2 jan 2021', 'dr.Patricia'),
                     ],
                   ),
                 ],
@@ -138,20 +156,38 @@ class pets extends StatelessWidget {
     );
   }
 
-  Widget _buildVaccineCard(String vaccine) {
+  Widget _buildVaccineCard(String vaccine, String data, String doctor) {
     return Container(
-      padding: EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: Colors.lightGreen,
-      ),
-      child: Text(
-        vaccine,
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
+        padding: EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.grey),
+                borderRadius: BorderRadius.circular(10.0),
+                // color: Colors.white,
+              ),
+        child: Column(
+          children: [
+            Text(
+              vaccine,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Text(
+              data,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            Text(
+              doctor,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ));
   }
 }
