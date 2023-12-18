@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:petshop/telas/botaosair.dart';
 import 'package:petshop/telas/botaogoogle.dart';
 import 'package:petshop/telas/iconetexto.dart';
+import 'package:petshop/telas/navibar.dart';
 
-class Pixelposse extends StatelessWidget {
-  const Pixelposse({super.key});
+class Telaperfil extends StatelessWidget {
+  const Telaperfil({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,7 @@ class Pixelposse extends StatelessWidget {
                         Botaosair(
                             clicar: () {},
                             texto: 'Sair',
-                            icon: 'google',
+                            icon: 'Group 206',
                             cor: Colors.black)
                       ],
                     ),
@@ -73,7 +74,7 @@ class Pixelposse extends StatelessWidget {
                         SizedBox(
                           width: 10,
                         ),
-                        Text('coisinha')
+                        Text('Claudia vasconcelos')
                       ],
                     ),
                     Row(
@@ -82,7 +83,7 @@ class Pixelposse extends StatelessWidget {
                         SizedBox(
                           width: 10,
                         ),
-                        Text('coisinha')
+                        Text('claudiavc@gmail.com')
                       ],
                     ),
                   ],
@@ -103,12 +104,12 @@ class Pixelposse extends StatelessWidget {
                   Iconetexto(
                     clicar: () {},
                     texto: 'Meu Perfil',
-                    icon: "paw",
+                    icon: "person",
                   ),
                   Iconetexto(
                     clicar: () {},
-                    texto: 'Consultas marcadas',
-                    icon: "paw",
+                    texto: 'Horarios marcados',
+                    icon: "calendario",
                   ),
                   Iconetexto(
                     clicar: () {},
@@ -118,7 +119,7 @@ class Pixelposse extends StatelessWidget {
                   Iconetexto(
                     clicar: () {},
                     texto: 'Agendar banhos',
-                    icon: "paw",
+                    icon: "agenda",
                   ),
                 ],
               ),
@@ -126,23 +127,7 @@ class Pixelposse extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.green,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.black,
-              ),
-              label: 'Home',backgroundColor: Colors.green),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.pets, color: Colors.black), label: 'Pets'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add, color: Colors.black), label: 'Add'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.black), label: 'Person'),
-        ],
-      ),
+      bottomNavigationBar: const Navibar(telaatual: 3),
     );
   }
 }

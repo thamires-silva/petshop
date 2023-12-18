@@ -1,12 +1,12 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
-import "package:petshop/meuperfil.dart";
-import "package:petshop/telas/agendamento.dart";
+import 'package:petshop/Telainicial.dart';
+import 'package:petshop/telas/Telaadicionar.dart';
 import "package:petshop/telas/cadastro.dart";
 import "package:petshop/telas/carregando.dart";
-import "package:petshop/telas/login.dart";
-import "package:petshop/telas/meuspet.dart";
-import "package:petshop/telas/pixelposse.dart";
+import 'package:petshop/telas/Telalogin.dart';
+import 'package:petshop/telas/telapets.dart';
+import 'package:petshop/telas/Telaperfil.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSeed(seedColor: const Color(0xFF5BB15A)),
             useMaterial3: true,
             fontFamily: 'fredoka'),
-        home: agendamento());
+        home: Telainicial());
   }
 }
 
@@ -95,7 +95,7 @@ class Inicio extends StatelessWidget {
                     Text('Já possui uma conta? '),
                     InkWell(
                       onTap: () {
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => Telalogin()));
 
                       },
                       child: Text('login',style: TextStyle(color: Color(0xff5CB15A)),),

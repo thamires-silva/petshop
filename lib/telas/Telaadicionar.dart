@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:petshop/telas/butaohorario.dart';
+import 'package:petshop/telas/navibar.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-void main() {
-  runApp(agendamento());
-}
 
-class agendamento extends StatelessWidget {
+class Telaadicionar extends StatelessWidget {
+  Telaadicionar({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return 
+       Scaffold(
         appBar: AppBar(
           title: Text('Agendamento'),
         ),
@@ -140,25 +140,7 @@ class agendamento extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.green,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.black,
-                ),
-                label: 'Home',
-                backgroundColor: Colors.green),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.pets, color: Colors.black), label: 'Pets'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.add, color: Colors.black), label: 'Add'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person, color: Colors.black), label: 'Person'),
-          ],
-        ),
-      ),
-    );
+       bottomNavigationBar: Navibar(telaatual: 2),
+      );
   }
 }

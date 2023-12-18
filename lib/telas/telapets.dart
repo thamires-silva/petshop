@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:petshop/telas/icons.dart';
+import 'package:petshop/telas/navibar.dart';
 
 void main() {
-  runApp(pets());
+  runApp(Telapets());
 }
 
-class pets extends StatelessWidget {
+class Telapets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,6 +130,7 @@ class pets extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: Navibar(telaatual: 1),
     );
   }
 

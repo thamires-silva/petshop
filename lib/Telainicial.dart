@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:petshop/telas/navibar.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-void main() {
-  runApp(Meuperfil());
-}
 
-class Meuperfil extends StatelessWidget {
+class Telainicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,39 +164,7 @@ class Meuperfil extends StatelessWidget {
               ]),
         ),
       ),
-      bottomNavigationBar: Positioned(
-        left: 0,
-        right: 0,
-        bottom: 0,
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-            color: Color(0xFF5BB15A),
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                icon: Icon(Icons.home, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.pets, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.calendar_today, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.person, color: Colors.white),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: Navibar(telaatual: 0)
     );
   }
 }
