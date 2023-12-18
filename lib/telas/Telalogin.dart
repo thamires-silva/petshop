@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petshop/telas/botaogoogle.dart';
 import 'package:petshop/telas/buttoes.dart';
+import 'package:petshop/telas/logincontrole.dart';
 
 class Telalogin extends StatefulWidget {
   const Telalogin({super.key});
@@ -65,7 +66,9 @@ class _TelaCadastroState extends State<Telalogin> {
 
             
             const SizedBox(height: 20.0),
-            Butoes(clicar: (){}, texto: 'Cadastrar'),
+            Butoes(clicar: (){
+              Logincontrole().login(_EmailController.text, _SenhaController.text);
+            }, texto: 'Login'),
             Text('Ou entre com o'),
             Googlebutao(texto: 'entre com o google', clicar:(){}, icon: 'google',cor: Colors.white,),
             // FilledButton(onPressed: () {}, child: const Text('Cadastrar')),

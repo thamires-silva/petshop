@@ -17,8 +17,8 @@ class Butaohorario extends StatelessWidget {
       onTap: clicar,
       child: Container(
        
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 8),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.green),
           child: (Text(texto,style: TextStyle(color: Colors.white, fontSize: 16),
           textAlign: TextAlign.center))),

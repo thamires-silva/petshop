@@ -8,8 +8,8 @@ class Telainicial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
+        child: SafeArea(
+          // padding: const EdgeInsets.all(16.0),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -154,13 +154,14 @@ class Telainicial extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    TableCalendar(
+                    
+                  ],
+                ),
+                TableCalendar(
                       focusedDay: DateTime.now(),
                       firstDay: DateTime.utc(2023, 1, 1),
                       lastDay: DateTime.utc(2040, 12, 31),
                     ),
-                  ],
-                ),
               ]),
         ),
       ),

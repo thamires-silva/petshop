@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:petshop/Telainicial.dart';
@@ -8,9 +9,12 @@ import 'package:petshop/telas/Telalogin.dart';
 import 'package:petshop/telas/telapets.dart';
 import 'package:petshop/telas/Telaperfil.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp().then((value) => Get.put(Telalogin()));
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,7 +27,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSeed(seedColor: const Color(0xFF5BB15A)),
             useMaterial3: true,
             fontFamily: 'fredoka'),
-        home: Telainicial());
+        home: Telalogin());
   }
 }
 

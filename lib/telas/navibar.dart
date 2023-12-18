@@ -37,6 +37,8 @@ class NavibarState extends State<Navibar> {
       onTap: next,
       currentIndex: widget.telaatual,
       backgroundColor: Colors.green,
+      fixedColor: Colors.blue,
+      unselectedItemColor: Colors.black,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home'),
         BottomNavigationBarItem(icon: Icon(Icons.pets),label: 'pets'),

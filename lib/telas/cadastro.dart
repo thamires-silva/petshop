@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petshop/telas/botaogoogle.dart';
 import 'package:petshop/telas/buttoes.dart';
+import 'package:petshop/telas/logincontrole.dart';
 
 class TelaCadastro extends StatefulWidget {
   const TelaCadastro({super.key});
@@ -94,7 +95,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
 
             
             const SizedBox(height: 20.0),
-            Butoes(clicar: (){}, texto: 'Cadastrar'),
+            Butoes(clicar: (){
+              Logincontrole().criarconta(_NomeController.text, _EmailController.text, _SenhaController.text);
+            }, texto: 'Cadastrar'),
             Text('Ou entre com o'),
             Googlebutao(texto: 'entre com o google', clicar:(){}, icon: 'google',cor: Colors.white,),
             // FilledButton(onPressed: () {}, child: const Text('Cadastrar')),
