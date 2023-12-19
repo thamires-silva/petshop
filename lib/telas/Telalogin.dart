@@ -7,10 +7,10 @@ class Telalogin extends StatefulWidget {
   const Telalogin({super.key});
 
   @override
-  _TelaCadastroState createState() => _TelaCadastroState();
+ State <Telalogin> createState() => _TelaloginState();
 }
 
-class _TelaCadastroState extends State<Telalogin> {
+class _TelaloginState extends State<Telalogin> {
   final TextEditingController _EmailController = TextEditingController();
   final TextEditingController _SenhaController = TextEditingController();
 

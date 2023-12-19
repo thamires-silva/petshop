@@ -6,12 +6,13 @@ import 'package:petshop/telas/Telaadicionar.dart';
 import "package:petshop/telas/cadastro.dart";
 import "package:petshop/telas/carregando.dart";
 import 'package:petshop/telas/Telalogin.dart';
+import 'package:petshop/telas/logincontrole.dart';
 import 'package:petshop/telas/telapets.dart';
 import 'package:petshop/telas/Telaperfil.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp().then((value) => Get.put(Telalogin()));
+  await Firebase.initializeApp().then((value) => Get.put(Logincontrole()));
   runApp(MyApp());
 }
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSeed(seedColor: const Color(0xFF5BB15A)),
             useMaterial3: true,
             fontFamily: 'fredoka'),
-        home: Telalogin());
+        home: Inicio());
   }
 }
 
