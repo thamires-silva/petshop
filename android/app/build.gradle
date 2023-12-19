@@ -1,8 +1,4 @@
-// plugins {
-//     id "com.android.application"
-//     id "kotlin-android"
-//     id "dev.flutter.flutter-gradle-plugin"
-// }
+// android/app/build.gradle
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -67,4 +63,5 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:multidex:2.0.1'
+    implementation platform('com.google.firebase:firebase-bom:28.4.1')
 }
